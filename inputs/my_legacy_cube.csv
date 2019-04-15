@@ -1,0 +1,583 @@
+NAME,Grouping
+Arcane Sanctum,lands
+Crumbling Necropolis,lands
+Jungle Shrine,lands
+Seaside Citadel,lands
+Nomad Outpost,lands
+Mystic Monastery,lands
+Opulent Palace,lands
+Sandsteppe Citadel,lands
+Frontier Bivouac,lands
+Savage Lands,lands
+Adarkar Wastes,lands
+Underground River,lands
+Sulfurous Springs,lands
+Karplusan Forest,lands
+Brushland,lands
+Caves of Koilos,lands
+Llanowar Wastes,lands
+Yavimaya Coast,lands
+Shivan Reef,lands
+Battlefield Forge,lands
+Lumbering Falls,lands
+Stirring Wildwood,lands
+Shambling Vent,lands
+Raging Ravine,lands
+Hissing Quagmire,lands
+Lavaclaw Reaches,lands
+Wandering Fumarole,lands
+Needle Spires,lands
+Darkwater Catacombs,lands
+Nimbus Maze,lands
+Port Town,lands
+Choked Estuary,lands
+Foreboding Ruins,lands
+Game Trail,lands
+Fortified Village,lands
+Canopy Vista,lands
+Cinder Glade,lands
+Prairie Stream,lands
+Smoldering Marsh,lands
+Sunken Hollow,lands
+Temple of Silence,lands
+Temple of Malady,lands
+Temple of Mystery,lands
+Temple of Epiphany,lands
+Temple of Triumph,lands
+Scoured Barrens,lands
+Swiftwater Cliffs,lands
+Jungle Hollow,lands
+Wind-Scarred Crag,lands
+Thornwood Falls,lands
+Bant Panorama,lands
+Esper Panorama,lands
+Grixis Panorama,lands
+Jund Panorama,lands
+Naya Panorama,lands
+Mishra's Factory,lands
+Evolving Wilds,lands
+Terramorphic Expanse,lands
+Ash Barrens,lands
+Mirrodin's Core,lands
+Shimmering Grotto,lands
+Unknown Shores,lands
+Unstable Frontier,lands
+Aether Hub,lands
+Grand Coliseum,lands
+Rupture Spire,lands
+Transguild Promenade,lands
+Vivid Creek,lands
+Vivid Grove,lands
+Vivid Crag,lands
+Vivid Marsh,lands
+Vivid Meadow,lands
+Perilous Myr,colorless_creatures
+Scrapheap Scrounger,colorless_creatures
+Epochrasite,colorless_creatures
+Phyrexian Revoker,colorless_creatures
+Filigree Familiar,colorless_creatures
+Palladium Myr,colorless_creatures
+Scuttlemutt,colorless_creatures
+Solemn Simulacrum,colorless_creatures
+Crystalline Crawler,colorless_creatures
+Molten-Tail Masticore,colorless_creatures
+Lodestone Golem,colorless_creatures
+Precursor Golem,colorless_creatures
+Triskelion,colorless_creatures
+Duplicant,colorless_creatures
+Steel Hellkite,colorless_creatures
+Myr Battlesphere,colorless_creatures
+Sundering Titan,colorless_creatures
+Ancient Stone Idol,colorless_creatures
+Matter Reshaper,colorless_creatures
+Reality Smasher,colorless_creatures
+Oblivion Sower,colorless_creatures
+Endbringer,colorless_creatures
+Bane of Bala Ged,colorless_creatures
+Artisan of Kozilek,colorless_creatures
+Everflowing Chalice,colorless_non_creatures
+Bonesplitter,colorless_non_creatures
+Pithing Needle,colorless_non_creatures
+Wayfarer's Bauble,colorless_non_creatures
+Prismatic Lens,colorless_non_creatures
+Shrine of Burning Rage,colorless_non_creatures
+Swiftfoot Boots,colorless_non_creatures
+Smuggler's Copter,colorless_non_creatures
+Armillary Sphere,colorless_non_creatures
+Mind Stone,colorless_non_creatures
+Coldsteel Heart,colorless_non_creatures
+Simic Signet,colorless_non_creatures
+Boros Signet,colorless_non_creatures
+Izzet Signet,colorless_non_creatures
+Golgari Signet,colorless_non_creatures
+Orzhov Signet,colorless_non_creatures
+Talisman of Progress,colorless_non_creatures
+Talisman of Dominance,colorless_non_creatures
+Talisman of Impulse,colorless_non_creatures
+Talisman of Indulgence,colorless_non_creatures
+Talisman of Unity,colorless_non_creatures
+Sphere of the Suns,colorless_non_creatures
+Cryptolith Fragment,colorless_non_creatures
+Worn Powerstone,colorless_non_creatures
+Basalt Monolith,colorless_non_creatures
+Grafted Wargear,colorless_non_creatures
+Crystal Shard,colorless_non_creatures
+Loxodon Warhammer,colorless_non_creatures
+Fleetwheel Cruiser,colorless_non_creatures
+Mimic Vat,colorless_non_creatures
+Erratic Portal,colorless_non_creatures
+Icy Manipulator,colorless_non_creatures
+Hedron Archive,colorless_non_creatures
+Nevinyrral's Disk,colorless_non_creatures
+Loreseeker’s Stone,colorless_non_creatures
+Staff of Nin,colorless_non_creatures
+Llanowar Elves,green_creatures
+Elvish Mystic,green_creatures
+Fyndhorn Elves,green_creatures
+Joraga Treespeaker,green_creatures
+Arbor Elf,green_creatures
+Experiment One,green_creatures
+Avacyn's Pilgrim,green_creatures
+Ulvenwald Tracker,green_creatures
+Sakura-Tribe Elder,green_creatures
+Scavenging Ooze,green_creatures
+Sylvan Caryatid,green_creatures
+Wall of Roots,green_creatures
+Den Protector,green_creatures
+Wall of Blossoms,green_creatures
+Strangleroot Geist,green_creatures
+Duskwatch Recruiter,green_creatures
+Courser of Kruphix,green_creatures
+Reclamation Sage,green_creatures
+Yavimaya Elder,green_creatures
+Thrashing Brontodon,green_creatures
+"Rishkar, Peema Renegade",green_creatures
+Wolfir Avenger,green_creatures
+Caller of the Claw,green_creatures
+Phantom Nantuko,green_creatures
+"Polukranos, World Eater",green_creatures
+"Goreclaw, Terror of Qal Sisma",green_creatures
+Forgotten Ancient,green_creatures
+Wickerbough Elder,green_creatures
+Masked Admirers,green_creatures
+Vine Mare,green_creatures
+Beast Whisperer,green_creatures
+Thragtusk,green_creatures
+Acidic Slime,green_creatures
+Verdurous Gearhulk,green_creatures
+Wolfir Silverheart,green_creatures
+Whisperwood Elemental,green_creatures
+Soul of Zendikar ,green_creatures
+"Silvos, Rogue Elemental",green_creatures
+Cloudthresher,green_creatures
+Avenger of Zendikar,green_creatures
+Hornet Queen,green_creatures
+Pelakka Wurm,green_creatures
+Terastodon,green_creatures
+Woodfall Primus,green_creatures
+Rancor,green_non_creatures
+Nature's Claim,green_non_creatures
+Mutagenic Growth,green_non_creatures
+Wild Growth,green_non_creatures
+Vines of Vastwood,green_non_creatures
+Regrowth,green_non_creatures
+Rampant Growth,green_non_creatures
+Oath of Druids,green_non_creatures
+Channel,green_non_creatures
+Edge of Autumn,green_non_creatures
+Song of Freyalise,green_non_creatures
+Setessan Tactics,green_non_creatures
+Kodama's Reach,green_non_creatures
+Cultivate,green_non_creatures
+Beast Within,green_non_creatures
+Search for Tomorrow,green_non_creatures
+Curse of Predation,green_non_creatures
+Call of the Herd,green_non_creatures
+Harrow,green_non_creatures
+Harmonize,green_non_creatures
+Gaea's Embrace,green_non_creatures
+Stonewood Invocation ,green_non_creatures
+Pattern of Rebirth,green_non_creatures
+Plow Under,green_non_creatures
+Primal Command,green_non_creatures
+Overwhelming Stampede,green_non_creatures
+Selvala's Stampede,green_non_creatures
+Seasons Past,green_non_creatures
+Zurgo Bellstriker,red_creatures
+Falkenrath Gorger,red_creatures
+Monastery Swiftspear,red_creatures
+Firedrinker Satyr,red_creatures
+Stromkirk Noble,red_creatures
+Goblin Welder,red_creatures
+Soul-Scar Mage,red_creatures
+Bomat Courier,red_creatures
+Abbot of Keral Keep,red_creatures
+Young Pyromancer,red_creatures
+Earthshaker Khenra,red_creatures
+"Kari Zev, Skyship Raider",red_creatures
+Goblin Cratermaker,red_creatures
+Stormblood Berserker,red_creatures
+Keldon Marauders,red_creatures
+Jeering Instigator,red_creatures
+Hellspark Elemental,red_creatures
+Goblin Rabblemaster,red_creatures
+Legion Warboss,red_creatures
+Hanweir Garrison,red_creatures
+Sin Prodder,red_creatures
+Rampaging Ferocidon,red_creatures
+Chandra's Phoenix,red_creatures
+Pia Nalaar,red_creatures
+Dualcaster Mage,red_creatures
+Pia and Kiran Nalaar,red_creatures
+Hellrider,red_creatures
+Flametongue Kavu,red_creatures
+Avalanche Riders,red_creatures
+Hero of Oxid Ridge,red_creatures
+Thundermaw Hellkite,red_creatures
+Siege-Gang Commander,red_creatures
+Glorybringer,red_creatures
+Zealous Conscripts,red_creatures
+"Kiki-Jiki, Mirror Breaker",red_creatures
+Inferno Titan,red_creatures
+Lightning Bolt,red_non_creatures
+Burst Lightning,red_non_creatures
+Faithless Looting,red_non_creatures
+Firebolt,red_non_creatures
+Chain Lightning,red_non_creatures
+Forked Bolt,red_non_creatures
+Flame Slash,red_non_creatures
+Brute Force,red_non_creatures
+Incinerate,red_non_creatures
+Abrade,red_non_creatures
+Magma Jet,red_non_creatures
+Lightning Strike,red_non_creatures
+Searing Spear,red_non_creatures
+Arc Trail,red_non_creatures
+Pyroclasm,red_non_creatures
+Searing Blaze,red_non_creatures
+Mizzium Mortars,red_non_creatures
+Sulfuric Vortex,red_non_creatures
+Staggershock,red_non_creatures
+Rift Bolt,red_non_creatures
+Char,red_non_creatures
+Rift Bolt,red_non_creatures
+Brimstone Volley,red_non_creatures
+Risk Factor,red_non_creatures
+Collective Defiance,red_non_creatures
+Stoke the Flames,red_non_creatures
+Splinter Twin,red_non_creatures
+Outpost Siege,red_non_creatures
+"Daretti, Scrap Savant",red_non_creatures
+Act of Aggression,red_non_creatures
+Fireblast,red_non_creatures
+Burning of Xinye,red_non_creatures
+Wildfire,red_non_creatures
+Fireball,red_non_creatures
+Earthquake,red_non_creatures
+Bonfire of the Damned,red_non_creatures
+Enclave Cryptologist,blue_creatures
+Delver of Secrets,blue_creatures
+Looter il-Kor,blue_creatures
+Stratus Dancer,blue_creatures
+Waterfront Bouncer,blue_creatures
+Augur of Bolas,blue_creatures
+Wharf Infiltrator,blue_creatures
+Harbinger of the Tides,blue_creatures
+Warkite Marauder,blue_creatures
+Man-o'-War,blue_creatures
+Champion of Wits,blue_creatures
+Pestermite,blue_creatures
+Deceiver Exarch,blue_creatures
+Exclusion Mage,blue_creatures
+Nimble Obstructionist,blue_creatures
+"Thada Adel, Acquisitor",blue_creatures
+Callous Oppressor,blue_creatures
+Phyrexian Metamorph,blue_creatures
+Sower of Temptation,blue_creatures
+Whirler Rogue,blue_creatures
+Murmuring Mystic,blue_creatures
+Niblis of Frost,blue_creatures
+Mulldrifter,blue_creatures
+Meloku the Clouded Mirror,blue_creatures
+Arcane Savant,blue_creatures
+Docent of Perfection,blue_creatures
+Aetherling,blue_creatures
+Frost Titan,blue_creatures
+"Keiga, the Tide Star",blue_creatures
+Inkwell Leviathan,blue_creatures
+Brainstorm,blue_non_creatures
+Ponder,blue_non_creatures
+Force Spike,blue_non_creatures
+Serum Visions,blue_non_creatures
+Gitaxian Probe,blue_non_creatures
+Opt,blue_non_creatures
+Vapor Snag,blue_non_creatures
+Spell Pierce,blue_non_creatures
+Counterspell,blue_non_creatures
+Impulse,blue_non_creatures
+Mana Leak,blue_non_creatures
+Chart a Course,blue_non_creatures
+Miscalculation,blue_non_creatures
+Memory Lapse,blue_non_creatures
+Daze,blue_non_creatures
+Arcane Denial,blue_non_creatures
+Censor,blue_non_creatures
+Into the Roil,blue_non_creatures
+Forbid,blue_non_creatures
+Thirst for Knowledge,blue_non_creatures
+Compulsive Research,blue_non_creatures
+Tinker,blue_non_creatures
+Supreme Will,blue_non_creatures
+Frantic Search,blue_non_creatures
+Exclude,blue_non_creatures
+Capsize,blue_non_creatures
+Complicate,blue_non_creatures
+Fact or Fiction,blue_non_creatures
+Control Magic,blue_non_creatures
+Commit // Memory,blue_non_creatures
+Deep Analysis,blue_non_creatures
+Chemister's Insight,blue_non_creatures
+Careful Consideration,blue_non_creatures
+Mystic Confluence,blue_non_creatures
+Aetherspouts,blue_non_creatures
+Desertion,blue_non_creatures
+Gush,blue_non_creatures
+Upheaval,blue_non_creatures
+Dig Through Time,blue_non_creatures
+Treasure Cruise,blue_non_creatures
+Condescend,blue_non_creatures
+Repeal,blue_non_creatures
+"Kytheon, Hero of Akros",white_creatures
+Mardu Woe-Reaper,white_creatures
+Mother of Runes,white_creatures
+Dauntless Bodyguard,white_creatures
+Soldier of the Pantheon,white_creatures
+Skymarcher Aspirant,white_creatures
+Gideon's Lawkeeper,white_creatures
+Herald of Anafenza,white_creatures
+Devoted Caretaker,white_creatures
+Wall of Omens,white_creatures
+Accorder Paladin,white_creatures
+Imposing Sovereign,white_creatures
+Glory-Bound Initiate,white_creatures
+Adanto Vanguard,white_creatures
+Hidden Dragonslayer,white_creatures
+Seeker of the Way,white_creatures
+Spirit of the Labyrinth,white_creatures
+"Anafenza, Kin-Tree Spirit",white_creatures
+Flickerwisp,white_creatures
+Porcelain Legionnaire,white_creatures
+Blade Splicer,white_creatures
+"Thalia, Heretic Cathar",white_creatures
+Silverblade Paladin,white_creatures
+Mirran Crusader,white_creatures
+Soltari Champion,white_creatures
+Mentor of the Meek,white_creatures
+Hallowed Spiritkeeper,white_creatures
+Restoration Angel,white_creatures
+Leonin Warleader,white_creatures
+Palace Jailer,white_creatures
+Oketra the True,white_creatures
+Sublime Archangel,white_creatures
+High Sentinels of Arashin,white_creatures
+Ojutai Exemplars,white_creatures
+Angel of Invention,white_creatures
+Reveillark,white_creatures
+Cloudgoat Ranger,white_creatures
+Angel of Sanctions,white_creatures
+Sun Titan,white_creatures
+Exalted Angel,white_creatures
+Soul of Theros,white_creatures
+Angel of Serenity,white_creatures
+Swords to Plowshares,white_non_creatures
+Mana Tithe,white_non_creatures
+Condemn,white_non_creatures
+Oust,white_non_creatures
+Harm's Way,white_non_creatures
+Declaration in Stone,white_non_creatures
+Disenchant,white_non_creatures
+Balance,white_non_creatures
+Honor of the Pure,white_non_creatures
+Journey to Nowhere,white_non_creatures
+Oblivion Ring,white_non_creatures
+Lingering Souls,white_non_creatures
+Banishing Light,white_non_creatures
+Spear of Heliod,white_non_creatures
+Forsake the Worldly,white_non_creatures
+Prison Term,white_non_creatures
+Oblation,white_non_creatures
+Armageddon,white_non_creatures
+Day of Judgment,white_non_creatures
+Faith's Fetters,white_non_creatures
+Cast Out,white_non_creatures
+Fell the Mighty,white_non_creatures
+Spectral Procession,white_non_creatures
+Catastrophe,white_non_creatures
+Akroma's Vengeance,white_non_creatures
+Secure the Wastes,white_non_creatures
+Unexpectedly Absent,white_non_creatures
+Martial Coup,white_non_creatures
+Divine Deflection,white_non_creatures
+Quarantine Field,white_non_creatures
+Dread Wanderer,black_creatures
+Bloodsoaked Champion,black_creatures
+Diregraf Ghoul,black_creatures
+Carnophage,black_creatures
+Carrion Feeder,black_creatures
+Vampire Lacerator,black_creatures
+Cryptbreaker,black_creatures
+Pack Rat,black_creatures
+Blood Artist,black_creatures
+Kitesail Freebooter,black_creatures
+Asylum Visitor,black_creatures
+Oona's Prowler,black_creatures
+Heir of Falkenrath,black_creatures
+Vampire Hexmage,black_creatures
+Nezumi Graverobber,black_creatures
+Vampire Nighthawk,black_creatures
+Flesh Carver,black_creatures
+Hypnotic Specter,black_creatures
+Ammit Eternal,black_creatures
+Midnight Reaper,black_creatures
+Bone Shredder,black_creatures
+Cemetery Reaper,black_creatures
+Ravenous Chupacabra,black_creatures
+Skinrender,black_creatures
+"Braids, Cabal Minion",black_creatures
+Nekrataal,black_creatures
+"Gonti, Lord of Luxury",black_creatures
+Mirri the Cursed,black_creatures
+Shriekmaw,black_creatures
+"Drana, Kalastria Bloodchief",black_creatures
+Puppeteer Clique,black_creatures
+Noxious Gearhulk,black_creatures
+Demonlord Belzenlok,black_creatures
+Demon of Dark Schemes,black_creatures
+Tombstalker,black_creatures
+Distended Mindbender,black_creatures
+Duress,black_non_creatures
+Dark Ritual,black_non_creatures
+Divest,black_non_creatures
+Cabal Therapy,black_non_creatures
+Unearth,black_non_creatures
+Booster Tutor,black_non_creatures
+Tragic Slip,black_non_creatures
+Go for the Throat,black_non_creatures
+Animate Dead,black_non_creatures
+Hymn to Tourach,black_non_creatures
+Night's Whisper,black_non_creatures
+Doom Blade,black_non_creatures
+Exhume,black_non_creatures
+Ultimate Price,black_non_creatures
+Diabolic Edict,black_non_creatures
+Malicious Affliction,black_non_creatures
+Dismember,black_non_creatures
+Buried Alive,black_non_creatures
+Never // Return,black_non_creatures
+Read the Bones,black_non_creatures
+Ruinous Path,black_non_creatures
+Victimize,black_non_creatures
+Painful Truths,black_non_creatures
+Rhystic Tutor,black_non_creatures
+Languish,black_non_creatures
+Snuff Out,black_non_creatures
+Diabolic Servitude,black_non_creatures
+Dread Return,black_non_creatures
+Mutilate,black_non_creatures
+Living Death,black_non_creatures
+Wretched Confluence,black_non_creatures
+Unburial Rites,black_non_creatures
+Murderous Cut,black_non_creatures
+Increasing Ambition,black_non_creatures
+Decree of Pain,black_non_creatures
+Profane Command,black_non_creatures
+Judge's Familiar,azorius
+Curse of Chains,azorius
+Azorius Guildmage,azorius
+Daxos of Meletis,azorius
+Reflector Mage,azorius
+Ojutai's Command,azorius
+"Brago, King Eternal",azorius
+Fractured Identity,azorius
+"Venser, the Sojourner",azorius
+"Ayli, Eternal Pilgrim",orzhov
+Tidehollow Sculler,orzhov
+"Kambal, Consul of Allocation",orzhov
+Vindicate,orzhov
+"Sorin, Lord of Innistrad",orzhov
+"Aryel, Knight of Windgrace",orzhov
+Utter End,orzhov
+Blood Baron of Vizkopa,orzhov
+Magister of Worth,orzhov
+Lim-Dul's Vault,dimir
+Far // Away,dimir
+Baleful Strix,dimir
+Dimir Guildmage,dimir
+Psychatog,dimir
+"Ashiok, Nightmare Weaver",dimir
+Recoil,dimir
+Nightveil Specter,dimir
+"Wrexial, the Risen Deep",dimir
+Deathrite Shaman,golgari
+Abrupt Decay,golgari
+Lotleth Troll,golgari
+Putrefy,golgari
+Reaper of the Wilds,golgari
+Creakwood Liege,golgari
+Vraska the Unseen,golgari
+Spiritmonger,golgari
+Gleancrawler,golgari
+Rakdos Cackler,rakdos
+Dreadbore,rakdos
+Terminate,rakdos
+"Daretti, Ingenious Iconoclast",rakdos
+Ashenmoor Gouger,rakdos
+Murderous Redcap,rakdos
+Falkenrath Aristocrat,rakdos
+Void,rakdos
+"Grenzo, Dungeon Warden",rakdos
+Slippery Bogle,simic
+Simic Charm,simic
+Snakeform ,simic
+"Edric, Spymaster of Trest",simic
+Trygon Predator,simic
+Mystic Snake,simic
+Prophet of Kruphix,simic
+Simic Sky Swallower,simic
+"Nissa, Steward of Elements",simic
+Atarka's Command,gruul
+Firespout,gruul
+Burning-Tree Shaman,gruul
+Boggart Ram-Gang,gruul
+Bloodbraid Elf,gruul
+"Xenagos, the Reveler",gruul
+Ghor-Clan Rampager,gruul
+"Ruric Thar, the Unbowed",gruul
+Borborygmos Enraged,gruul
+Blistercoil Weird,izzet
+Izzet Charm,izzet
+Fire // Ice,izzet
+Expansion // Explosion,izzet
+Electrolyze,izzet
+Brutal Expulsion,izzet
+Ral Zarek,izzet
+Prophetic Bolt,izzet
+"Niv-Mizzet, Dracogenius ",izzet
+Dryad Militant,selesnya
+Selesnya Guildmage,selesnya
+Qasali Pridemage,selesnya
+Fleecemane Lion,selesnya
+Oracle of Nectars,selesnya
+Kitchen Finks,selesnya
+Armadillo Cloak,selesnya
+Loxodon Hierarch,selesnya
+"Ajani, Mentor of Heroes",selesnya
+Figure of Destiny,boros
+Lightning Helix,boros
+Boros Charm,boros
+"Tajic, Legion's Edge",boros
+Boros Reckoner,boros
+Ajani Vengeant,boros
+Master Warcraft,boros
+Brion Stoutarm,boros
+"Basandra, Battle Seraph",boros

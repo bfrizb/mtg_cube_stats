@@ -1,0 +1,165 @@
+cubetutor_ids:
+  # TODO! Optionally print last_updated for each cube when program is run.
+  5936: MTGO Vintage Cube XXX  # 540
+  170: wtwlf123's Cube # 540
+  131: KingNeb's Powered 540  # 541
+  3710: Simple_Man's 450 Powered  # 450
+  27960: Sweet Briar Cube  # 557
+  37845: Ryan's Cube  # 740
+  83702: Evincar's Cube  # 765
+max_cached_days: 30
+all_mtg_sets_path: /Users/bfrisbie/Downloads/mtg/AllSets.json  # from https://mtgjson.com/json/AllSets.json
+cache_dir: _cube_cache
+output_dir: outputs/vintage_csvs
+grouping_specs:
+  all:
+    filters: {}
+    columns: 'non_creature_columns'
+  three_plus_colors:
+    filters: {custom: '3+_colors'}
+    columns: 'non_creature_columns'
+  lands:
+    filters:
+      types: ['Land']
+    columns: 'land_columns'
+    num_needed: 20
+  colorless_creatures:
+    filters:
+      not_manaCost: ['W', 'U', 'B', 'R', 'G']
+      types: ['Creature']
+    columns: 'creature_columns'
+  colorless_non_creatures:
+    filters:
+      not_manaCost: ['W', 'U', 'B', 'R', 'G']
+      not_types: ['Creature', 'Land']
+    columns: 'non_creature_columns'
+  white_creatures:
+    filters:
+      manaCost: ['W']
+      not_manaCost: ['U', 'B', 'R', 'G']
+      types: ['Creature']
+    columns: 'creature_columns'
+  white_non_creatures:
+    filters:
+      manaCost: ['W']
+      not_manaCost: ['U', 'B', 'R', 'G']
+      not_types: ['Creature']
+    columns: 'non_creature_columns'
+  blue_creatures:
+    filters:
+      manaCost: ['U']
+      not_manaCost: ['W', 'B', 'R', 'G']
+      types: ['Creature']
+    columns: 'creature_columns'
+  blue_non_creatures:
+    filters:
+      manaCost: ['U']
+      not_manaCost: ['W', 'B', 'R', 'G']
+      not_types: ['Creature']
+    columns: 'non_creature_columns'
+  black_creatures:
+    filters:
+      manaCost: ['B']
+      not_manaCost: ['W', 'U', 'R', 'G']
+      types: ['Creature']
+    columns: 'creature_columns'
+  black_non_creatures:
+    filters:
+      manaCost: ['B']
+      not_manaCost: ['W', 'U', 'R', 'G']
+      not_types: ['Creature']
+    columns: 'non_creature_columns'
+  red_creatures:
+    filters:
+      manaCost: ['R']
+      not_manaCost: ['W', 'U', 'B', 'G']
+      types: ['Creature']
+    columns: 'creature_columns'
+  red_non_creatures:
+    filters:
+      manaCost: ['R']
+      not_manaCost: ['W', 'U', 'B', 'G']
+      not_types: ['Creature']
+    columns: 'non_creature_columns'
+  green_creatures:
+    filters:
+      manaCost: ['G']
+      not_manaCost: ['W', 'U', 'B', 'R']
+      types: ['Creature']
+    columns: 'creature_columns'
+  green_non_creatures:
+    filters:
+      manaCost: ['G']
+      not_manaCost: ['W', 'U', 'B', 'R']
+      not_types: ['Creature']
+    columns: 'non_creature_columns'
+  azorius:
+    filters:
+      colorIdentity: ['W', 'U']
+      not_colorIdentity: ['G', 'B', 'R']
+      not_types: ['Land']
+      not_name: ['Azorius Signet']
+    columns: 'non_creature_columns'
+  dimir:
+    filters:
+      colorIdentity: ['U', 'B']
+      not_colorIdentity: ['W', 'G', 'R']
+      not_types: ['Land']
+      not_name: ['Dimir Signet']
+    columns: 'non_creature_columns'
+  rakdos:
+    filters:
+      colorIdentity: ['B', 'R']
+      not_colorIdentity: ['W', 'U', 'G']
+      not_types: ['Land']
+      not_name: ['Rakdos Signet']
+    columns: 'non_creature_columns'
+  gruul:
+    filters:
+      colorIdentity: ['G', 'R']
+      not_colorIdentity: ['W', 'U', 'B']
+      not_types: ['Land']
+      not_name: ['Gruul Signet']
+    columns: 'non_creature_columns'
+  selesnya:
+    filters:
+      colorIdentity: ['W', 'G']
+      not_colorIdentity: ['U', 'B', 'R']
+      not_types: ['Land']
+      not_name: ['Selesnya Signet']
+    columns: 'non_creature_columns'
+  orzhov:
+    filters:
+      colorIdentity: ['W', 'B']
+      not_colorIdentity: ['U', 'G', 'R']
+      not_types: ['Land']
+      not_name: ['Orzhov Signet']
+    columns: 'non_creature_columns'
+  izzet:
+    filters:
+      colorIdentity: ['U', 'R']
+      not_colorIdentity: ['W', 'G', 'B']
+      not_types: ['Land']
+      not_name: ['Izzet Signet']
+    columns: 'non_creature_columns'
+  golgari:
+    filters:
+      colorIdentity: ['G', 'B']
+      not_colorIdentity: ['W', 'U', 'R']
+      not_types: ['Land']
+      not_name: ['Golgari Signet']
+    columns: 'non_creature_columns'
+  boros:
+    filters:
+      colorIdentity: ['W', 'R']
+      not_colorIdentity: ['U', 'B', 'G']
+      not_types: ['Land']
+      not_name: ['Boros Signet']
+    columns: 'non_creature_columns'
+  simic:
+    filters:
+      colorIdentity: ['G', 'U']
+      not_colorIdentity: ['W', 'B', 'R']
+      not_types: ['Land']
+      not_name: ['Simic Signet']
+    columns: 'non_creature_columns'

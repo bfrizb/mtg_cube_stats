@@ -1,0 +1,9 @@
+# Regular Files
+.DS_Store
+src/web_source_classes.py
+
+# Directories
+.vscode
+__pycache__
+_cube_cache
+outputs

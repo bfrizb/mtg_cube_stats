@@ -1,0 +1,9 @@
+price_cache_path: _cube_cache/mtg_price_cache.yaml
+cubes:
+  Legacy:
+    my_card_list: inputs/my_legacy_cube.csv
+    stats_csvs: outputs/legacy_csvs/
+  Vinetage:
+    my_card_list: inputs/my_vintage_cube.csv
+    stats_csvs: outputs/vintage_csvs/
+output_dir: outputs/comparison_csvs/
