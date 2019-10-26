@@ -5,6 +5,7 @@ import logging
 import os
 import requests
 import time
+import urllib
 from collections import namedtuple
 from datetime import datetime
 try:
@@ -37,7 +38,7 @@ class CubeTutorDownloader(object):
         return cube_paths
 
     def _download_cubetutor_list(self, cube_id, cube_name):
-        url = 'http://www.cubetutor.com/viewcube/{}'.format(cube_id)
+        url = 'https://www.cubetutor.com/viewcube/{}'.format(cube_id)
         logging.debug('Requesting {}'.format(url))
         r = requests.get(url)
         if r.status_code != 200:
@@ -51,15 +52,17 @@ class CubeTutorDownloader(object):
             'name="t:ac" type="hidden"></input><input value="', 1)[1].split('"', 1)[0]
         logging.debug('t_formdata for cube {} = {}'.format(cube_id, t_formdata))
 
-        url = 'http://www.cubetutor.com/viewcube.exportform.exportlistform;jsessionid=' + jess_id
-        r = requests.post(url, data = {
+        url = 'https://www.cubetutor.com/viewcube.exportform.exportlistform?t:ac=' + str(cube_id)
+        post_data={
             't:ac': cube_id,
             't:formdata': t_formdata,
             'fileType': 'CUBE_TXT',
             'submit_0': 'Export',
             't:submit': '["submit_2","submit_0"]',
-        })
-        print('\ncurl -d "{}" -X POST "{}"\n'.format(r.request.body, r.request.url))
+        }
+        r = requests.post(url, cookies=r.cookies, data=post_data)
+        print('\ncurl -d "{}" --cookie "JSESSIONID={}" "{}"\n'.format(
+            urllib.parse.urlencode(post_data), jess_id, url))
 
         with open(self.get_cube_file_path(self.cache_dir, cube_id), 'w') as fh:
             fh.write('# {}\n\n{}'.format(cube_name, r.text))  # .encode('utf-8')))  [py2.7 only]
@@ -76,6 +79,11 @@ class CubeTutorDownloader(object):
             return True
         return False
 
+class RequestThrottler(object):
+
+    def __init__(self, web_source, multiplier=1.5):
+        self.web_source = web_source
+        self.current_throttle = 0
 
 class PriceFetcher(object):
 
@@ -86,34 +94,6 @@ class PriceFetcher(object):
         # E.g. {Abrade: {date: '2018-01-23', price: 1.34}}
         self.price_cache = common.read_price_cache(cache_file_path)
         self.web_sources = web_source_classes.get_all_web_sources(all_sets_json)
-
-    @staticmethod
-    def get_http_response(url):
-        """Makes an HTTP request to the passed in URL and does a quick check on the HTTP response.
-        
-        Currently requests pages from mtgprice.com and cardkingdom.com
-        """
-        try:
-            resp = requests.get(url)
-        except requests.exceptions.SSLError as e:
-            logging.error(e)
-            return
-
-        if 'Throttled' in resp.text:
-            logging.critical('Throttled encountered!!!')
-            logging.warn(url)
-            logging.warn(resp.text)
-            time.sleep(10)
-        if resp.status_code != 200:
-            logging.warn('\tThe following URL produced status_code={0}: {1}'.format(resp.status_code, url))
-            return None
-        if 'That page was not found.' in resp.text:
-            logging.warn('\tThe following URL resulted in "That page was not found.": {0}'.format(url))
-            return None
-        if '<title></title>' in resp.text:
-            logging.warn('\tThe following URL contained "<title></title>": {0}'.format(url))
-            return None
-        return resp
 
     def query_price(self, card_name):
         """Queries the price of a specific MTG card given its name."""
@@ -134,21 +114,30 @@ class PriceFetcher(object):
         if all([card_name not in ws.setname_map for ws in self.web_sources]):
             return "NAME_NOT_FOUND"
 
-        # Check mtggoldfish 1st, cardkingdom 2nd, and mtgprice 3rd (stopping as soon as a price is found)
         lowest_price = None
+        skipped_due_to_throttle = set()
+        missing_card_price = set()
         for web_source in self.web_sources:
             for set_name in web_source.setname_map[card_name]:
-                resp = PriceFetcher.get_http_response(web_source.create_card_url(card_name, set_name))
+                resp = web_source.make_http_request(card_name, set_name)
                 if resp is None:
+                    if web_source.is_throttled:
+                        skipped_due_to_throttle.add(web_source.name)
+                    else:
+                        missing_card_price.add(web_source.name)
                     continue
                 price = web_source.parse_url_response(resp)
                 if price != 0 and (lowest_price is None or price < lowest_price):
                     lowest_price = price
             if lowest_price is not None:
                 break
-        self.price_cache[card_name] = {'price': lowest_price}
-        self.price_cache[card_name]['date'] = datetime.now().strftime('%Y-%m-%d')
-        self.price_cache[card_name]['web_source'] = web_source.name
+        self.price_cache[card_name] = {
+            'price': lowest_price,
+            'date': datetime.now().strftime('%Y-%m-%d'),
+            'web_source': web_source.name,
+            'skipped_due_to_throttle': skipped_due_to_throttle,
+            'missing_card_price': missing_card_price,
+        }
         return lowest_price
 
     def bulk_query_price(self, list_card_objs):

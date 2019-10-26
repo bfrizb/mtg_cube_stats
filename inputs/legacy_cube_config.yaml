@@ -1,15 +1,23 @@
-cubetutor_ids:
-  58025: Andy’s Sweet Synergy  # 546
-  20385: The Orc Library  # 555
-  804: rasgueo's cube  # 450
-  11520: Pif Cube  # 450
-  2834: a_m_a_t's Cube  # 540
+cubetutor_ids:  # Last Updated 2019-10-26
+  101569: Microcosm  # 720
+  58025: Andy’s Sweet Synergy  # 540
+  114981: Sphere # 540
+  64542: Ryan's Cube  # 540
   1371: Wonderful World of Magic  # 540
-  2007: Eternal Cube  # 720
+  12865: Non Proxy  # 450
+  1914: Steve's Cube  # 565
+  2007: Eternal Cube  # 670
+  20385: The Orc Library  # 570
+  804: rasgueo's cube # 459
+  # ======
+  #  804: rasgueo's cube  # 450
+  #  11520: Pif Cube  # 450
+  #  2834: a_m_a_t's Cube  # 540
+  #  2007: Eternal Cube  # 720
 max_cached_days: 30
-all_mtg_sets_path: /Users/bfrisbie/Downloads/mtg/AllSets.json  # from https://mtgjson.com/json/AllSets.json
-cache_dir: _cube_cache
-output_dir: outputs/legacy_csvs
+all_mtg_sets_path: /Users/bfrisbie/Downloads/_PERMANENT/mtg/AllSets.json  # from https://mtgjson.com/json/AllSets.json
+cache_dir: /Volumes/Core BFrisbie Files/Active Documents - BFrisbie/Coding:Programming/Personal Coding Projects/MTG Related Projects/mtg_cube_stats/_cube_cache
+output_dir: /Volumes/Core BFrisbie Files/Active Documents - BFrisbie/Coding:Programming/Personal Coding Projects/MTG Related Projects/mtg_cube_stats/outputs/legacy_csvs
 grouping_specs:
   all:
     filters: {}
