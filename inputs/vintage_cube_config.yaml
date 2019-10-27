@@ -1,7 +1,7 @@
 cubetutor_ids:  # Last Updated 2019-10-26
-  86169: MTGO Vintage Cube Summer 2019  # 540
+  5936: MTGO Vintage Cube Summer 2019  # 540
   170: wtwlf123's Cube  # 720
-  123849: MoxCube  # 720
+  123849: MoxCube  # 720           <--- Does Not have all of the Power 9
   155051: Vintage Cube  # 720
   729: CodeSim's Cube  # 720
   27805: Matt's Dragon Cube  # 720
@@ -16,8 +16,8 @@ cubetutor_ids:  # Last Updated 2019-10-26
   # 83702: Evincar's Cube  # 765
 max_cached_days: 30
 all_mtg_sets_path: /Users/bfrisbie/Downloads/_PERMANENT/mtg/AllSets.json  # from https://mtgjson.com/json/AllSets.json
-cache_dir: /Volumes/Core BFrisbie Files/Active Documents - BFrisbie/Coding:Programming/Personal Coding Projects/MTG Related Projects/mtg_cube_stats/_cube_cache
-output_dir: /Volumes/Core BFrisbie Files/Active Documents - BFrisbie/Coding:Programming/Personal Coding Projects/MTG Related Projects/mtg_cube_stats/outputs/vintage_csvs
+cache_dir: _cube_cache
+output_dir: outputs/vintage_csvs
 grouping_specs:
   all:
     filters: {}

@@ -25,7 +25,7 @@ class WebSource(abc.ABC):
         # {CARD_NAME: [SET_1, SET_2, ...]}   |   # E.g. {'Giant Spider': ['Alpha', 'Beta', ...]}
         self.setname_map = self._create_setname_map(all_sets_json)
         self.was_throttled = None  # Did the latest HTTP request result in a Throttled response?
-        self._current_throttle_in_sec = INITIAL_THROTTLE_SECONDS 
+        self._current_throttle_in_sec = INITIAL_THROTTLE_SECONDS
         self._throttle_mult = throttle_mult
         self._throttle_end_time = None
 

@@ -11,11 +11,10 @@ import groupings
 import logging
 import yaml
 PROGRAM_PURPOSE = """Generates statistics on a proposed MTG Cube based on other popular cubes on cubetutor.com"""
-DEFAULT_CONFIG = '/Volumes/Core BFrisbie Files/Active Documents - BFrisbie/Coding:Programming/Personal Coding Projects/MTG Related Projects/mtg_cube_stats/inputs/vintage_cube_config.yaml'
 
 def parse_args():
     parser = argparse.ArgumentParser(description=PROGRAM_PURPOSE)
-    parser.add_argument('-c', '--config_path', default=DEFAULT_CONFIG,
+    parser.add_argument('-c', '--config_path', default='inputs/vintage_cube_config.yaml',
                         help='Path to the configuration file')
     parser.add_argument(
         '-s', '--skip_downloads', action='store_true', help='Skips downloading files from the internet. This will '

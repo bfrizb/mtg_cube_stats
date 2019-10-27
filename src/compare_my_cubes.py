@@ -36,9 +36,13 @@ class Comparer(object):
             for i, row in enumerate(reader):
                 if i == 0:
                     headers = row
+                    for k, head in enumerate(headers):
+                        if 'OCCURRENCES/' in head:
+                            occur_index = k
+                            break
                     continue
                 name = row[headers.index('NAME')]
-                occur_col = row[headers.index('OCCURRENCES/7')]
+                occur_col = row[occur_index]
                 count = int(occur_col.split('/')[0])
                 tokens = row[headers.index('TOKENS')]
 
@@ -95,7 +99,8 @@ class Comparer(object):
             table = [header]
             # Go thru all PossibleCard's within the group
             for pcard in all_possibles:
-                table.append([pcard.name, price_cache.get(pcard.name, 'MISSING'), pcard.total_occur]
+                price = price_cache.get(pcard.name, {'price': 'MISSING'})['price']
+                table.append([pcard.name, price, pcard.total_occur]
                     + pcard.get_occurences(self.my_cube_lists.keys()) + self.get_include_marks(pcard.name)
                     + [pcard.tokens])
 

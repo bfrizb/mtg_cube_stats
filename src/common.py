@@ -2,7 +2,9 @@ import json
 import logging
 import os
 import re
+import shutil
 import yaml
+from datetime import datetime
 OCCUR_STR = 'occurrences'
 NUM_MAP = {'a': 'ONE', 'two': 'TWO', 'three': 'THREE', 'four': 'FOUR'}
 
@@ -51,12 +53,14 @@ def read_price_cache(cache_file_path):
     # Read in local cache of MTG card prices
     if os.path.exists(cache_file_path):
         with open(cache_file_path, 'r') as fh:
-            return yaml.load(fh.read())
+            return yaml.load(fh.read()) or {}
     else:
         return {}
 
 
 def save_to_price_cache(price_cache, cache_file_path):
+    shutil.move(cache_file_path, os.path.join(os.path.expanduser('~'), '.Trash',
+                                 str(datetime.now()) + '_' + os.path.basename(cache_file_path)))
     with open(cache_file_path, 'w') as fh:
         fh.write(yaml.dump(price_cache))
 

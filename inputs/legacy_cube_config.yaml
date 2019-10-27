@@ -16,8 +16,8 @@ cubetutor_ids:  # Last Updated 2019-10-26
   #  2007: Eternal Cube  # 720
 max_cached_days: 30
 all_mtg_sets_path: /Users/bfrisbie/Downloads/_PERMANENT/mtg/AllSets.json  # from https://mtgjson.com/json/AllSets.json
-cache_dir: /Volumes/Core BFrisbie Files/Active Documents - BFrisbie/Coding:Programming/Personal Coding Projects/MTG Related Projects/mtg_cube_stats/_cube_cache
-output_dir: /Volumes/Core BFrisbie Files/Active Documents - BFrisbie/Coding:Programming/Personal Coding Projects/MTG Related Projects/mtg_cube_stats/outputs/legacy_csvs
+cache_dir: _cube_cache
+output_dir: outputs/legacy_csvs
 grouping_specs:
   all:
     filters: {}
