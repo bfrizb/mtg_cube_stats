@@ -13,9 +13,10 @@ PRICE_CACHE_FNAME = 'mtg_price_cache.yaml'
 
 class Aggregator(object):
 
-    def __init__(self, config, skip_downloads=False):
+    def __init__(self, config, skip_downloads=False, update_throttled=False):
         self.num_other_cubes = None  # int (None when uninitialized)
         self._skip_downloads = skip_downloads
+        self._update_throttled = update_throttled
         self.grouping_specs = {}                # Specified in config
         card_map = self._aggregate_data(config)
         self.cards = card_map                   # {card_name: card_object}
@@ -69,7 +70,7 @@ class Aggregator(object):
             os.path.join(config['cache_dir'], PRICE_CACHE_FNAME),
             config.get('max_cached_days', DEFAULT_MAX_CACHED_DAYS), all_sets_json)
         if not self._skip_downloads:
-            pf.bulk_query_price(list(card_map.values()))
+            pf.bulk_query_price(list(card_map.values()), self._update_throttled)
 
         # Update Card JSON data with price info
         for card in card_map.values():

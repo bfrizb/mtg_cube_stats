@@ -5,6 +5,7 @@ import re
 import shutil
 import yaml
 from datetime import datetime
+from send2trash import send2trash
 OCCUR_STR = 'occurrences'
 NUM_MAP = {'a': 'ONE', 'two': 'TWO', 'three': 'THREE', 'four': 'FOUR'}
 
@@ -59,8 +60,9 @@ def read_price_cache(cache_file_path):
 
 
 def save_to_price_cache(price_cache, cache_file_path):
-    shutil.move(cache_file_path, os.path.join(os.path.expanduser('~'), '.Trash',
-                                 str(datetime.now()) + '_' + os.path.basename(cache_file_path)))
+    to_be_trashed_fpath = str(datetime.now()) + '_' + os.path.basename(cache_file_path)
+    os.rename(cache_file_path, to_be_trashed_fpath)
+    send2trash(to_be_trashed_fpath)
     with open(cache_file_path, 'w') as fh:
         fh.write(yaml.dump(price_cache))
 

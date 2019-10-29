@@ -6,6 +6,7 @@ import os
 import requests
 import time
 import urllib
+import yaml
 from collections import namedtuple
 from datetime import datetime
 try:
@@ -79,23 +80,52 @@ class CubeTutorDownloader(object):
             return True
         return False
 
-class RequestThrottler(object):
 
-    def __init__(self, web_source, multiplier=1.5):
-        self.web_source = web_source
-        self.current_throttle = 0
+class FailLog(object):
+
+    def __init__(self):
+        # self._record ==>
+        #   { set_name1:
+        #     { web_source_name1: [
+        #       { url: XXX, status_code: YYY, text: ZZZ},
+        #       ...
+        #     ]   }   }
+        self._record = {}
+
+    @staticmethod
+    def parse_resp(resp):
+        return {
+            'url': resp.url,
+            'status_code': resp.status_code,
+            'text': resp.text.strip()[:100],
+        }
+
+    def add(self, set_name, web_source_name, resp):
+        if set_name in self._record:
+            if web_source_name in self._record[set_name]:
+                self._record[set_name][web_source_name].append(FailLog.parse_resp(resp))
+            else:
+                self._record[set_name][web_source_name] = [FailLog.parse_resp(resp)]
+        else:
+            self._record[set_name] = {web_source_name: [FailLog.parse_resp(resp)]}
+
+    def save(self, cache_folder):
+        with open(os.path.join(cache_folder, 'fail_log.yaml'), 'w') as fh:
+            fh.write(yaml.dump(self._record))
+
 
 class PriceFetcher(object):
 
     def __init__(self, cache_file_path, max_cached_days, all_sets_json):
         self._cache_file_path = cache_file_path
         self._max_cached_days = max_cached_days
+        self._fail_log = FailLog()
         # self.price_cache = {<CARD_NAME>: {'date': <>, 'price': <>}}
         # E.g. {Abrade: {date: '2018-01-23', price: 1.34}}
         self.price_cache = common.read_price_cache(cache_file_path)
         self.web_sources = web_source_classes.get_all_web_sources(all_sets_json)
 
-    def query_price(self, card_name):
+    def query_price(self, card_name, update_throttled=False):
         """Queries the price of a specific MTG card given its name."""
 
         # First, check if the card price is in local cache and is not stale
@@ -103,13 +133,24 @@ class PriceFetcher(object):
             cached_date = datetime.strptime(self.price_cache[card_name]['date'], '%Y-%m-%d')
             data_age = (datetime.now() - cached_date).days
             if (
-                    data_age <= self._max_cached_days and
-                    'web_source' in self.price_cache[card_name] and
-                    self.price_cache[card_name]['web_source'].lower() != 'mtgprice' and
-                    self.price_cache[card_name]['price'] is not None and
-                    self.price_cache[card_name]['price'] != 0
+                data_age <= self._max_cached_days and
+                'web_source' in self.price_cache[card_name] and
+                self.price_cache[card_name]['web_source'].lower() != 'mtgprice' and  # mtgprice is unreliable
+                self.price_cache[card_name]['price'] is not None and
+                self.price_cache[card_name]['price'] != 0
+                and (
+                    # Use the price cache if:
+                    #     (1) we are Not updating throttled entries, OR (2) the card entry was NOT throttled
+                    not update_throttled or  # update_throttled=True
+                    not self.price_cache[card_name].get('skipped_due_to_throttle', True)
+                )
             ):
                 return self.price_cache[card_name]['price']
+
+            if 'web_source' in self.price_cache[card_name]:
+                logging.debug('\n\t{} | {}'.format(card_name, self.price_cache[card_name]['web_source']))
+            else:
+                logging.debug('\n\t {} | No web source'.format(card_name))
 
         if all([card_name not in ws.setname_map for ws in self.web_sources]):
             return "NAME_NOT_FOUND"
@@ -121,6 +162,7 @@ class PriceFetcher(object):
             for set_name in web_source.setname_map[card_name]:
                 resp = web_source.make_http_request(card_name, set_name)
                 if resp is None:
+                    self._fail_log.add(set_name, web_source.name, web_source.last_response)
                     if web_source.is_throttled:
                         skipped_due_to_throttle.add(web_source.name)
                     else:
@@ -140,11 +182,12 @@ class PriceFetcher(object):
         }
         return lowest_price
 
-    def bulk_query_price(self, list_card_objs):
+    def bulk_query_price(self, list_card_objs, update_throttled=False):
         list_card_objs.sort(key=lambda card: card.name)  # Sort by card name
         try:
             for card in list_card_objs:
-                card.price = self.query_price(card.name)
+                card.price = self.query_price(card.name, update_throttled)
         finally:
             # Saves card prices to the local cache file
             common.save_to_price_cache(self.price_cache, self._cache_file_path)
+            self._fail_log.save(os.path.dirname(self._cache_file_path))

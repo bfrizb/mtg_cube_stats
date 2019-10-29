@@ -10,12 +10,13 @@ INITIAL_THROTTLE_SECONDS = 5
 
 
 SKIPPED_SETS_PARTIAL_NAME = [
-    'Salvat 20', 'Magic Player Rewards', 'Comic Con',
+    'Salvat 20', 'Magic Player Rewards', 'Comic Con', 'Oversized',
 ]
 SKIPPED_SETS_FULL_NAMES = [
     'Masters Edition', "Collector's Edition", "International Collector's Edition",
     'Vintage Masters', 'Tempest Remastered', 'Unstable', 'Unhinged', 'Unglued', 'Arena League',
     'Magic Online Promos', 'Magic Online Theme Decks', 'Duel Decks Mirrodin Pure vs New Phyrexia',
+    'Arena League 2004', 'Avacyn Restored Promos', 'Commander Anthology Volume II',
 ]
 
 class WebSource(abc.ABC):
@@ -24,7 +25,7 @@ class WebSource(abc.ABC):
         self.name = 'ABSTRACT_CLASS'
         # {CARD_NAME: [SET_1, SET_2, ...]}   |   # E.g. {'Giant Spider': ['Alpha', 'Beta', ...]}
         self.setname_map = self._create_setname_map(all_sets_json)
-        self.was_throttled = None  # Did the latest HTTP request result in a Throttled response?
+        self.last_response = None
         self._current_throttle_in_sec = INITIAL_THROTTLE_SECONDS
         self._throttle_mult = throttle_mult
         self._throttle_end_time = None
@@ -50,18 +51,19 @@ class WebSource(abc.ABC):
         if self._throttle_end_time and self._throttle_end_time > datetime.now():
             return None  # Continue throttling
 
+        self.last_response = None
         url = self._create_card_url(card_name, set_name)
         try:
             resp = requests.get(url)
+            self.last_response = resp
         except requests.exceptions.SSLError as e:
             logging.error(e)
             return
 
-        if 'Throttled' in resp.text:
+        if resp.status_code == 429 or 'Throttled' in resp.text:
             if self._throttle_end_time:  # Here, we only recently tried another request after throttling
                 self._current_throttle_in_sec *= self._throttle_mult
             logging.warn('Throttle encountered for: {}'.format(url))
-            logging.warn('\t' + resp.text)
             logging.info('\nThrottling for {} seconds'.format(self._current_throttle_in_sec))
             self._throttle_end_time = datetime.now() + timedelta(seconds=self._current_throttle_in_sec)
             return None                
